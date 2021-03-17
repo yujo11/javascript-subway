@@ -5,6 +5,7 @@ import {
   sectionsTemplate,
   loginTemplate,
   stationsTemplate,
+  mainTemplate,
 } from './templates/index.js';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
 };
 
 const titles = {
+  [KEY.MAIN]: '🚇 지하철 노선도',
   [KEY.STATIONS]: '🚉 역 관리',
   [KEY.LINES]: '🛤️ 노선 관리',
   [KEY.SECTIONS]: '🔁 구간 관리',
@@ -27,6 +29,7 @@ const titles = {
 };
 
 const templates = {
+  [KEY.MAIN]: mainTemplate,
   [KEY.STATIONS]: stationsTemplate,
   [KEY.LINES]: linesTemplate,
   [KEY.SECTIONS]: sectionsTemplate,
@@ -41,4 +44,7 @@ const render = (url) => {
 
 window.addEventListener('DOMContentLoaded', () => {
   App();
+});
+window.addEventListener('popstate', () => {
+  render(window.location.pathname);
 });
