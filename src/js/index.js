@@ -24,9 +24,9 @@ const initRender = () => {
 
 const bindEvent = () => {
   $('header').addEventListener('click', handleNavigationButton);
-  $('.login-form__signup-button').addEventListener('click', handleSignupButton);
-  $('.signup-container__form').addEventListener('submit', handlerSignupSubmit);
-  $('.login-container__form').addEventListener('submit', handleLoginSubmit);
+  $('#signup-button').addEventListener('click', handleSignupButton);
+  $('#signup-form').addEventListener('submit', handlerSignupSubmit);
+  $('#login-form').addEventListener('submit', handleLoginSubmit);
 };
 
 const App = () => {

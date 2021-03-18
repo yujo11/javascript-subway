@@ -3,7 +3,7 @@ export const loginTemplate = () => {
             <div class="heading">
               <h2>👋 로그인</h2>
             </div>
-            <form name="login" class="login-container__form">
+            <form name="login" id="login-form">
               <div class="input-control">
                 <label for="login-email" class="input-label" hidden>이메일</label>
                 <input
@@ -39,7 +39,7 @@ export const loginTemplate = () => {
               </div>
               <p class="text-gray-700 pl-2">
                 아직 회원이 아니신가요?
-                <a href="/signup" class="login-form__signup-button">회원가입</a>
+                <a href="/signup" id="signup-button">회원가입</a>
               </p>
             </form>
          </div>`;

@@ -4,7 +4,7 @@ export const signupTemplate = () => {
       <div class="heading">
         <h2 class="text">📝 회원가입</h2>
       </div>
-      <form name="signup" class="signup-container__form">
+      <form name="signup" id="signup-form">
       <div class="input-control">
           <label for="signup-name" class="input-label" hidden>이름</label>
           <input
