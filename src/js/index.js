@@ -1,79 +1,30 @@
-import '../css/index.css';
-import { KEY } from './constants/index.js';
+// import '../css/index.css';
+import { $ } from './utils/index.js';
 import {
+  mainTemplate,
+  stationsTemplate,
   linesTemplate,
   sectionsTemplate,
   loginTemplate,
-  stationsTemplate,
-  mainTemplate,
   signupTemplate,
 } from './templates/index.js';
-import { $, $$, hideElement, showElement } from './utils/index.js';
+import { renderTemplate } from './view/index.js';
+import { handleSignupButton, handleNavigationButton } from './handlers/index.js';
 
-const templates = {
-  [KEY.MAIN]: 'main-container',
-  [KEY.STATIONS]: 'stations-container',
-  [KEY.LINES]: 'lines-container',
-  [KEY.SECTIONS]: 'sections-container',
-  [KEY.LOGIN]: 'login-container',
-  [KEY.SINGUP]: 'signup-container',
-};
+const initRender = () => {
+  const templates = [mainTemplate, stationsTemplate, linesTemplate, sectionsTemplate, loginTemplate, signupTemplate];
 
-const titles = {
-  [KEY.MAIN]: '🚇 지하철 노선도',
-  [KEY.STATIONS]: '🚉 역 관리',
-  [KEY.LINES]: '🛤️ 노선 관리',
-  [KEY.SECTIONS]: '🔁 구간 관리',
-  [KEY.MAP]: '🗺️ 전체 보기',
-  [KEY.SEARCH]: '🔎 길 찾기',
-  [KEY.LOGIN]: '👤 로그인',
-  [KEY.SINGUP]: '📝 회원가입',
-};
-
-const showTemplate = (target) => {
-  $$('main > .container').forEach((container) => hideElement(container));
-  showElement($(`.${target}`));
-};
-
-const render = (url) => {
-  document.title = titles[url];
-  showTemplate(templates[url]);
-};
-
-const handleNavigationButton = (e) => {
-  e.preventDefault();
-
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-
-  const url = e.target.closest('a').getAttribute('href');
-  history.pushState({ url }, null, url);
-  render(url);
+  $('#main-container').innerHTML = templates.map((template) => template()).join('');
 };
 
 const bindEvent = () => {
   $('header').addEventListener('click', handleNavigationButton);
-};
-
-const initRender = () => {
-  const templates = [
-    mainTemplate,
-    stationsTemplate,
-    linesTemplate,
-    sectionsTemplate,
-    loginTemplate,
-    signupTemplate,
-  ];
-
-  $('#main-container').innerHTML = templates
-    .map((template) => template())
-    .join('');
+  $('.login-form__signup-button').addEventListener('click', handleSignupButton);
 };
 
 const App = () => {
-  bindEvent();
   initRender();
+  bindEvent();
 };
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -81,5 +32,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('popstate', () => {
-  render(window.location.pathname);
+  renderTemplate(window.location.pathname);
 });

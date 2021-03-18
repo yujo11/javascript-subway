@@ -6,38 +6,41 @@ export const signupTemplate = () => {
       </div>
       <form name="login" class="form">
         <div class="input-control">
-          <label for="email" class="input-label" hidden>이메일</label>
+          <label for="signup-email" class="input-label" hidden>이메일</label>
           <input
             type="email"
-            id="email"
-            name="email"
+            id="signup-email"
+            name="signup-email"
             class="input-field"
             placeholder="이메일"
+            autocomplete="off"
             required
           />
         </div>
         <div class="input-control">
-          <label for="password" class="input-label" hidden
+          <label for="signup-password" class="input-label" hidden
             >비밀번호</label
           >
           <input
             type="password"
-            id="password"
-            name="password"
+            id="signup-password"
+            name="signup-password"
             class="input-field"
             placeholder="비밀번호"
+            autocomplete="off"
           />
         </div>
         <div class="input-control">
-          <label for="password-confirm" class="input-label" hidden
+          <label for="signup-password-confirm" class="input-label" hidden
             >비밀번호 확인</label
           >
           <input
             type="password"
-            id="password-confirm"
-            name="password-confirm"
+            id="signup-password-confirm"
+            name="signup-password-confirm"
             class="input-field"
             placeholder="비밀번호 확인"
+            autocomplete="off"
           />
         </div>
         <div class="input-control">

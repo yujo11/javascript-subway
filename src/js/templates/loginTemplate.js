@@ -5,26 +5,28 @@ export const loginTemplate = () => {
             </div>
             <form name="login" class="form login-form">
               <div class="input-control">
-                <label for="email" class="input-label" hidden>이메일</label>
+                <label for="login-email" class="input-label" hidden>이메일</label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  id="login-email"
+                  name="login-email"
                   class="input-field"
                   placeholder="이메일"
+                  autocomplete="on"
                   required
                 />
               </div>
               <div class="input-control">
-                <label for="password" class="input-label" hidden
+                <label for="login-password" class="input-label" hidden
                   >비밀번호</label
                 >
                 <input
                   type="password"
-                  id="password"
-                  name="password"
+                  id="login-password"
+                  name="login-password"
                   class="input-field"
                   placeholder="비밀번호"
+                  autocomplete="on"
                 />
               </div>
               <div class="input-control w-100">

@@ -11,43 +11,21 @@
       <div class="d-flex justify-center mt-5 w-100">
         <div class="w-100">
           <header class="my-4">
-            <a href="/" class="text-black">
-              <h1 class="text-center font-bold">🚇 지하철 노선도</h1>
+            <a href="/" class="navigation-link text-black">
+              <h1 class="btn text-center font-bold mb-10">🚇 지하철 노선도</h1>
             </a>
-            <nav class="js-navigation d-flex justify-center flex-wrap">
-              <a href="/stations" class="my-1">
-                <button
-                  class="js-navigation__stations btn bg-white shadow mx-1"
-                >
-                  🚉 역 관리
-                </button>
+            <nav class="d-flex justify-center flex-wrap">
+              <a href="/stations" class="navigation-link my-1">
+                <button class="js-navigation__stations btn bg-white shadow mx-1">🚉 역 관리</button>
               </a>
-              <a href="/lines" class="my-1">
-                <button class="js-navigation__lines btn bg-white shadow mx-1">
-                  🛤️ 노선 관리
-                </button>
+              <a href="/lines" class="navigation-link my-1">
+                <button class="js-navigation__lines btn bg-white shadow mx-1">🛤️ 노선 관리</button>
               </a>
-              <a href="/sections" class="my-1">
-                <button
-                  class="js-navigation__sections btn bg-white shadow mx-1"
-                >
-                  🔁 구간 관리
-                </button>
+              <a href="/sections" class="navigation-link my-1">
+                <button class="js-navigation__sections btn bg-white shadow mx-1">🔁 구간 관리</button>
               </a>
-              <a href="/map" class="my-1">
-                <button class="js-navigation__map btn bg-white shadow mx-1">
-                  🗺️ 전체 보기
-                </button>
-              </a>
-              <a href="/search" class="my-1">
-                <button class="js-navigation__search btn bg-white shadow mx-1">
-                  🔎 길 찾기
-                </button>
-              </a>
-              <a href="/login" class="my-1">
-                <button class="js-navigation__login btn bg-white shadow mx-1">
-                  👤 로그인
-                </button>
+              <a href="/login" class="navigation-link my-1">
+                <button class="js-navigation__login btn bg-white shadow mx-1">👤 로그인</button>
               </a>
             </nav>
           </header>
@@ -56,13 +34,12 @@
               <div class="d-flex justify-center">
                 <img src="src/images/subway_emoji.png" width="200" />
               </div>
-              <p class="mt-0 text-center">
-                지하철 노선도 앱을 사용하기 위해서는 로그인이 필요합니다.
-              </p>
+              <p class="mt-0 text-center">지하철 노선도 앱을 사용하기 위해서는 로그인이 필요합니다.</p>
             </div>
           </main>
         </div>
       </div>
     </div>
+    <script type="module" src="./src/js/index.js"></script>
   </body>
 </html>
