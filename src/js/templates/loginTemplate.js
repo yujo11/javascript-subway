@@ -3,7 +3,7 @@ export const loginTemplate = () => {
             <div class="heading">
               <h2>👋 로그인</h2>
             </div>
-            <form name="login" class="form login-form">
+            <form name="login" class="login-container__form">
               <div class="input-control">
                 <label for="login-email" class="input-label" hidden>이메일</label>
                 <input
@@ -31,7 +31,6 @@ export const loginTemplate = () => {
               </div>
               <div class="input-control w-100">
                 <button
-                  type="button"
                   name="submit"
                   class="input-submit w-100 bg-cyan-300"
                 >

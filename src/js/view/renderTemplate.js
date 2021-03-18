@@ -7,7 +7,7 @@ const templates = {
   [KEY.LINES]: 'lines-container',
   [KEY.SECTIONS]: 'sections-container',
   [KEY.LOGIN]: 'login-container',
-  [KEY.SINGUP]: 'signup-container',
+  [KEY.SIGNUP]: 'signup-container',
 };
 
 const titles = {
@@ -16,7 +16,7 @@ const titles = {
   [KEY.LINES]: '🛤️ 노선 관리',
   [KEY.SECTIONS]: '🔁 구간 관리',
   [KEY.LOGIN]: '👤 로그인',
-  [KEY.SINGUP]: '📝 회원가입',
+  [KEY.SIGNUP]: '📝 회원가입',
 };
 
 const showTemplate = (target) => {

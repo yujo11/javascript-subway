@@ -9,7 +9,7 @@ import {
   signupTemplate,
 } from './templates/index.js';
 import { renderTemplate } from './view/index.js';
-import { handleSignupButton, handleNavigationButton } from './handlers/index.js';
+import { handleSignupButton, handleNavigationButton, handlerSignupSubmit } from './handlers/index.js';
 
 const initRender = () => {
   const templates = [mainTemplate, stationsTemplate, linesTemplate, sectionsTemplate, loginTemplate, signupTemplate];
@@ -20,6 +20,7 @@ const initRender = () => {
 const bindEvent = () => {
   $('header').addEventListener('click', handleNavigationButton);
   $('.login-form__signup-button').addEventListener('click', handleSignupButton);
+  $('.signup-container__form').addEventListener('submit', handlerSignupSubmit);
 };
 
 const App = () => {

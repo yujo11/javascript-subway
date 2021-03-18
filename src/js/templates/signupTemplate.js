@@ -4,7 +4,19 @@ export const signupTemplate = () => {
       <div class="heading">
         <h2 class="text">📝 회원가입</h2>
       </div>
-      <form name="login" class="form">
+      <form name="signup" class="signup-container__form">
+      <div class="input-control">
+          <label for="signup-name" class="input-label" hidden>이름</label>
+          <input
+            type="text"
+            id="signup-name"
+            name="signup-name"
+            class="input-field"
+            placeholder="이름"
+            autocomplete="off"
+            required
+          />
+        </div>
         <div class="input-control">
           <label for="signup-email" class="input-label" hidden>이메일</label>
           <input
@@ -45,7 +57,6 @@ export const signupTemplate = () => {
         </div>
         <div class="input-control">
           <button
-            type="button"
             name="submit"
             class="input-submit w-100 bg-cyan-300"
           >
