@@ -8,6 +8,7 @@ import {
   sectionsTemplate,
   loginTemplate,
   signupTemplate,
+  requestLoginTemplate,
 } from './templates/index.js';
 import {
   handleSignupButton,
@@ -17,7 +18,15 @@ import {
 } from './handlers/index.js';
 
 const initRender = () => {
-  const templates = [mainTemplate, stationsTemplate, linesTemplate, sectionsTemplate, loginTemplate, signupTemplate];
+  const templates = [
+    mainTemplate,
+    stationsTemplate,
+    linesTemplate,
+    sectionsTemplate,
+    loginTemplate,
+    signupTemplate,
+    requestLoginTemplate,
+  ];
 
   $('#main-container').innerHTML = templates.map((template) => template()).join('');
 };

@@ -8,6 +8,7 @@ const templates = {
   [KEY.SECTIONS]: 'sections-container',
   [KEY.LOGIN]: 'login-container',
   [KEY.SIGNUP]: 'signup-container',
+  [KEY.REQUEST_LOGIN]: 'request-login-container',
 };
 
 const titles = {
@@ -19,7 +20,7 @@ const titles = {
   [KEY.SIGNUP]: '📝 회원가입',
 };
 
-const showTemplate = (target) => {
+export const showTemplate = (target) => {
   $$('main > .container').forEach((container) => hideElement(container));
   showElement($(`.${target}`));
 };

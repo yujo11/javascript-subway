@@ -7,6 +7,7 @@ export const KEY = {
   SEARCH: '/search',
   LOGIN: '/login',
   SIGNUP: '/signup',
+  REQUEST_LOGIN: '/request-login',
 };
 
 export const LOCAL_STORAGE_KEY = {

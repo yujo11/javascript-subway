@@ -1,6 +1,14 @@
 const BASE_URL = 'http://15.164.230.130:8080';
 
 const option = {
+  get: (token) => ({
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+      Authorization: `Bearer ${token}`,
+    },
+  }),
+
   post: (contents) => ({
     method: 'POST',
     headers: {
@@ -41,5 +49,9 @@ export const API = {
 
   login: ({ email, password }) => {
     return request('/login/token', option.post({ email, password }));
+  },
+
+  getStationList: (token) => {
+    return request('/stations', option.get(token));
   },
 };

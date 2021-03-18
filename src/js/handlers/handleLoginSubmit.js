@@ -13,6 +13,8 @@ export const handleLoginSubmit = async (e) => {
   const response = await API.login({ email, password });
   setLocalStorageItem({ key: LOCAL_STORAGE_KEY.TOKEN, item: response.accessToken });
 
+  console.log(response);
+
   if (!response.ok) {
     showSnackbar(SNACKBAR_MESSAGE.LOGIN_FAILURE);
     return;
