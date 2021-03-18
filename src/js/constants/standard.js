@@ -8,3 +8,7 @@ export const KEY = {
   LOGIN: '/login',
   SIGNUP: '/signup',
 };
+
+export const LOCAL_STORAGE_KEY = {
+  TOKEN: 'TOKEN',
+};

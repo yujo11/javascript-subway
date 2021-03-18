@@ -1,5 +1,6 @@
 import { API, showSnackbar } from '../utils/index.js';
-import { SNACKBAR_MESSAGE } from '../constants/index.js';
+import { KEY, SNACKBAR_MESSAGE } from '../constants/index.js';
+import { renderTemplate } from '../view/renderTemplate.js';
 
 export const handlerSignupSubmit = async (e) => {
   e.preventDefault();
@@ -9,7 +10,10 @@ export const handlerSignupSubmit = async (e) => {
   const password = e.target.elements['signup-password'].value;
   const confirmPassword = e.target.elements['signup-password-confirm'].value;
 
+  // TODO
+  // 스낵바 대신 입력창 하단에 메세지 출력하기
   if (password !== confirmPassword) {
+    showSnackbar(SNACKBAR_MESSAGE.NOT_MATCH_CONFIRM_PASSWORD);
     return;
   }
 
@@ -21,4 +25,5 @@ export const handlerSignupSubmit = async (e) => {
   }
 
   showSnackbar(SNACKBAR_MESSAGE.SIGNUP_SUCCESS);
+  renderTemplate(KEY.LOGIN);
 };
