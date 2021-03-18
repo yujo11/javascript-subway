@@ -1,6 +1,6 @@
 export const mainTemplate = () => {
   return `
-    <div class="d-flex flex-col">
+    <div class="main-container container d-flex flex-col">
         <div class="d-flex justify-center">
         <img src="src/images/subway_emoji.png" width="200" />
         </div>

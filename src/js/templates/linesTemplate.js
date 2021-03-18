@@ -1,6 +1,6 @@
 export const linesTemplate = () => {
   return `
-  <div class="wrapper bg-white p-10">
+  <div class="lines-container container wrapper bg-white p-10 d-none">
     <div class="heading d-flex">
       <h2 class="mt-1 w-100">🛤️ 노선 관리</h2>
       <button

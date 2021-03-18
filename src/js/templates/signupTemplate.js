@@ -1,6 +1,6 @@
 export const signupTemplate = () => {
   return `
-  <div class="wrapper p-10 bg-white">
+  <div class="signup-container container wrapper p-10 bg-white d-none">
       <div class="heading">
         <h2 class="text">📝 회원가입</h2>
       </div>

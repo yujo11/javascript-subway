@@ -6,4 +6,5 @@ export const KEY = {
   MAP: '/map',
   SEARCH: '/search',
   LOGIN: '/login',
+  SINGUP: '/signup',
 };

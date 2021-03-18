@@ -6,16 +6,17 @@ import {
   loginTemplate,
   stationsTemplate,
   mainTemplate,
+  signupTemplate,
 } from './templates/index.js';
+import { $, $$, hideElement, showElement } from './utils/index.js';
 
-const App = () => {
-  document.querySelector('header').addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const url = e.target.closest('a').getAttribute('href');
-    history.pushState({ url }, null, url);
-    render(url);
-  });
+const templates = {
+  [KEY.MAIN]: 'main-container',
+  [KEY.STATIONS]: 'stations-container',
+  [KEY.LINES]: 'lines-container',
+  [KEY.SECTIONS]: 'sections-container',
+  [KEY.LOGIN]: 'login-container',
+  [KEY.SINGUP]: 'signup-container',
 };
 
 const titles = {
@@ -26,25 +27,59 @@ const titles = {
   [KEY.MAP]: '🗺️ 전체 보기',
   [KEY.SEARCH]: '🔎 길 찾기',
   [KEY.LOGIN]: '👤 로그인',
+  [KEY.SINGUP]: '📝 회원가입',
 };
 
-const templates = {
-  [KEY.MAIN]: mainTemplate,
-  [KEY.STATIONS]: stationsTemplate,
-  [KEY.LINES]: linesTemplate,
-  [KEY.SECTIONS]: sectionsTemplate,
-  [KEY.LOGIN]: loginTemplate,
+const showTemplate = (target) => {
+  $$('main > .container').forEach((container) => hideElement(container));
+  showElement($(`.${target}`));
 };
 
 const render = (url) => {
-  const $mainContainer = document.querySelector('#main-container');
   document.title = titles[url];
-  $mainContainer.innerHTML = templates[url]?.();
+  showTemplate(templates[url]);
+};
+
+const handleNavigationButton = (e) => {
+  e.preventDefault();
+
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const url = e.target.closest('a').getAttribute('href');
+  history.pushState({ url }, null, url);
+  render(url);
+};
+
+const bindEvent = () => {
+  $('header').addEventListener('click', handleNavigationButton);
+};
+
+const initRender = () => {
+  const templates = [
+    mainTemplate,
+    stationsTemplate,
+    linesTemplate,
+    sectionsTemplate,
+    loginTemplate,
+    signupTemplate,
+  ];
+
+  $('#main-container').innerHTML = templates
+    .map((template) => template())
+    .join('');
+};
+
+const App = () => {
+  bindEvent();
+  initRender();
 };
 
 window.addEventListener('DOMContentLoaded', () => {
   App();
 });
+
 window.addEventListener('popstate', () => {
   render(window.location.pathname);
 });

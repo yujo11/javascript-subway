@@ -1,9 +1,9 @@
 export const loginTemplate = () => {
-  return `<div class="wrapper p-10 bg-white">
+  return `<div class="login-container container wrapper p-10 bg-white d-none">
             <div class="heading">
               <h2>👋 로그인</h2>
             </div>
-            <form name="login" class="form">
+            <form name="login" class="form login-form">
               <div class="input-control">
                 <label for="email" class="input-label" hidden>이메일</label>
                 <input
@@ -38,7 +38,7 @@ export const loginTemplate = () => {
               </div>
               <p class="text-gray-700 pl-2">
                 아직 회원이 아니신가요?
-                <a href="/pages/signup.html">회원가입</a>
+                <a href="/signup" class="login-form__signup-button">회원가입</a>
               </p>
             </form>
          </div>`;

@@ -1,6 +1,6 @@
 export const stationsTemplate = () => {
   return `
-  <div class="wrapper bg-white p-10">
+  <div class="stations-container container wrapper bg-white p-10 d-none">
       <div class="heading">
         <h2 class="mt-1">🚉 역 관리</h2>
       </div>
