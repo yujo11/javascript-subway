@@ -1,4 +1,5 @@
-import { API } from '../utils/index.js';
+import { API, showSnackbar } from '../utils/index.js';
+import { SNACKBAR_MESSAGE } from '../constants/index.js';
 
 export const handlerSignupSubmit = async (e) => {
   e.preventDefault();
@@ -15,6 +16,9 @@ export const handlerSignupSubmit = async (e) => {
   const response = await API.signup({ email, password, name });
 
   if (!response.ok) {
-    alert('회원가입에 실패했습니다.');
+    showSnackbar(SNACKBAR_MESSAGE.SIGNUP_FAILURE);
+    return;
   }
+
+  showSnackbar(SNACKBAR_MESSAGE.SIGNUP_SUCCESS);
 };
