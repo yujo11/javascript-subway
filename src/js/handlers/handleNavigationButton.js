@@ -1,5 +1,5 @@
-import { KEY } from '../constants/standard.js';
-import { $$ } from '../utils/querySelector.js';
+import { KEY, LOCAL_STORAGE_KEY } from '../constants/index.js';
+import { $, $$, getLocalStorageItem } from '../utils/index.js';
 import { renderTemplate, showTemplate } from '../view/index.js';
 
 const changeSelectedButtonColor = (target) => {
@@ -10,6 +10,17 @@ const changeSelectedButtonColor = (target) => {
   }
 
   target.classList.add('bg-cyan-100');
+};
+
+export const changeLoginButton = (token) => {
+  if (!token) {
+    $('#navigation-login').classList.remove('d-none');
+    $('#navigation-logout').classList.add('d-none');
+    return;
+  }
+
+  $('#navigation-login').classList.add('d-none');
+  $('#navigation-logout').classList.remove('d-none');
 };
 
 export const handleNavigationButton = (e) => {
@@ -23,9 +34,12 @@ export const handleNavigationButton = (e) => {
 
   // TODO
   // LOGIN CORS가 해결되면 getStationList로 request를 보내서 토큰이 올바른지 검증
-  const token = false;
   history.pushState({ url }, null, url);
   changeSelectedButtonColor(e.target);
+
+  const token = getLocalStorageItem({ key: LOCAL_STORAGE_KEY.TOKEN, defaultValue: '' });
+
+  changeLoginButton(token);
 
   if (token) {
     renderTemplate(url);

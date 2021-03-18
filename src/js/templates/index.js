@@ -5,3 +5,4 @@ export { signupTemplate } from './signupTemplate.js';
 export { stationsTemplate } from './stationsTemplate.js';
 export { mainTemplate } from './mainTemplate.js';
 export { requestLoginTemplate } from './requestLoginTemplate.js';
+export { headerTemplate } from './headerTemplate.js';
