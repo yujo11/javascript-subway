@@ -1,4 +1,4 @@
-export const getLocalStorageItem = ({ key, defaultValue }) => {
+export const getLocalStorageItem = ({ key, defaultValue = '' }) => {
   const storedData = localStorage.getItem(key);
 
   if (!storedData) {

@@ -38,6 +38,9 @@ const request = async (url, option = {}) => {
   } catch (err) {
     console.error(err);
   } finally {
+    if (response.body) {
+      return response.json();
+    }
     return response;
   }
 };

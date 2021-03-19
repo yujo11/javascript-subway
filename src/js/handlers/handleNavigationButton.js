@@ -1,11 +1,16 @@
 import { KEY, LOCAL_STORAGE_KEY } from '../constants/index.js';
-import { $, $$, getLocalStorageItem } from '../utils/index.js';
+import { $, $$, getLocalStorageItem, setLocalStorageItem } from '../utils/index.js';
 import { renderTemplate, showTemplate } from '../view/index.js';
 
-const changeSelectedButtonColor = (target) => {
+const logout = () => {
+  localStorage.removeItem(LOCAL_STORAGE_KEY.TOKEN);
+  renderTemplate(KEY.LOGIN);
+};
+
+export const changeSelectedButtonColor = (target = '') => {
   $$('.navigation-button').forEach((button) => button.classList.remove('bg-cyan-100'));
 
-  if (target.id === 'navigation-main') {
+  if (target.id === 'navigation-main' || !target) {
     return;
   }
 
@@ -27,6 +32,11 @@ export const handleNavigationButton = (e) => {
   e.preventDefault();
 
   if (!e.target.classList.contains('btn')) {
+    return;
+  }
+
+  if (e.target.id === 'navigation-logout') {
+    logout();
     return;
   }
 
