@@ -2975,6 +2975,7 @@
 }
 
 /* Border Width */
+
 .border-0 {
   border-width: 0px;
 }
@@ -4066,6 +4067,7 @@ rounded {
 .modal-inner {
   transition: top 0.25s ease;
   max-width: 960px;
+  max-height: 90%;
   margin: auto;
   overflow: auto;
   background: #fff;
@@ -4104,9 +4106,53 @@ svg {
   }
 }
 
+.confirm-inner {
+  transition: top 0.25s ease;
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.confirm-text {
+  padding: 20px;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-button-list {
+  margin-top: 0;
+  margin-bottom: 30px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.confirm-inner button {
+  width: 120px;
+  height: 50px;
+  background-color: #eee;
+  border: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.confirm-inner button:hover {
+  background-color: #ddd;
+}
+
 .chip {
   padding: 0 12px;
-  background-color: #efefef;
+  /* background-color: #efefef; */
   border-radius: 100px;
   display: inline-flex;
   color: rgba(0, 0, 0, 0.87);
@@ -4295,8 +4341,8 @@ main .wrapper {
 }
 
 .color-option {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   cursor: pointer;
   border: none;
@@ -4313,10 +4359,6 @@ main .wrapper {
   border: none;
   outline: none;
   border-radius: 2rem;
-}
-
-.modal-inner {
-  width: 600px;
 }
 
 
@@ -4342,8 +4384,7 @@ a {
 
 main .wrapper {
   width: 540px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
 
@@ -4365,5 +4406,38 @@ ul li button {
 
 ul li button:hover {
   background-color: rgb(229, 231, 235);
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.bottom-line {
+  border-bottom: 1px solid lightgray;
+}
+
+.sections-bottom-line {
+  border-bottom: 2px dashed lightgray;
+  width: 45%;
+}
+
+.subway-line-color-selector {
+  transform: rotate(90deg);
+}
+
+.align-center {
+  align-items: center;
+}
+
+.vertical-line-bar {
+  width: 4px;
+  height: 40px;
+  z-index: 1;
+}
+
+.section-info-container {
+  position: absolute;
+  left: 46%;
+  transform: translate(0%, -50%);
 }
 
